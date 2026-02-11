@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="nav">
+<a href="index.html">Accueil</a>
+<a href="maladies.html">Maladies</a>
+<a href="dons.html">Don de Sang</a>
+<a href="census.html">Census</a>
+</div>
+
+<h1>Dons</h1>
+
+<button onclick="open('donModal')">Ajouter Don</button>
+
+<table id="donsTable"></table>
+
+<div id="donModal" class="modal">
+<div class="box">
+Nom <input id="donNom"><br>
+Groupe <input id="donGroup"><br>
+<button onclick="addDon()">Ajouter</button>
+<button onclick="closeM()">Fermer</button>
+</div>
+</div>
+
+<script src="app.js"></script>
+<script>
+fetch("data.json").then(r=>r.json()).then(d=>{
+ DATA=d;
+ render("dons","donsTable");
+});
+</script>
+
+</body>
+</html>
