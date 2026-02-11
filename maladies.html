@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="nav">
+<a href="index.html">Accueil</a>
+<a href="maladies.html">Maladies</a>
+<a href="dons.html">Don de Sang</a>
+<a href="census.html">Census</a>
+</div>
+
+<h1>Maladies</h1>
+<table id="maladiesTable"></table>
+
+<script src="app.js"></script>
+<script>
+fetch("data.json").then(r=>r.json()).then(d=>{
+ DATA=d;
+ render("maladies","maladiesTable");
+});
+</script>
+
+</body>
+</html>
