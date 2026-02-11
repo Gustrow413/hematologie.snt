@@ -1,0 +1,7 @@
+{
+  "maladies": [
+    {"Nom":"Anémie","Type":"Carence","Cause":"Manque de fer"}
+  ],
+  "dons": [],
+  "stocks": []
+}
