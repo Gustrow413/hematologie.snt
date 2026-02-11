@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="nav">
+<a href="index.html">Accueil</a>
+<a href="maladies.html">Maladies</a>
+<a href="dons.html">Don de Sang</a>
+<a href="census.html">Census</a>
+</div>
+
+<h1>Census sanguin</h1>
+
+<button onclick="open('stockModal')">Ajouter Stock</button>
+
+<table id="stockTable"></table>
+
+<div id="stockModal" class="modal">
+<div class="box">
+Groupe <input id="stockG"><br>
+Litres <input id="stockL"><br>
+<button onclick="addStock()">Ajouter</button>
+<button onclick="closeM()">Fermer</button>
+</div>
+</div>
+
+<script src="app.js"></script>
+<script>
+fetch("data.json").then(r=>r.json()).then(d=>{
+ DATA=d;
+ render("stocks","stockTable");
+});
+</script>
+
+</body>
+</html>
